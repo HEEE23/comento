@@ -1,0 +1,37 @@
+* {
+    font-family: "Pretendard Variable", sans-serif;
+}
+
+body {
+    background-color: #c491b2;
+}
+
+.list {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 25vh;
+}
+
+.two {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -75px;
+    gap: 100px;
+}
+
+.me {
+    border-radius: 10px; /* 프로필 이미지 모서리 둥글게 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
+}
+
+.intext {
+    font-size: 30px;
+    line-height: 1.8;
+    color: #ffffff;
+    text-align: left;
+    max-width: 600px;
+    padding-left: 20px;
+    padding-right: 20px;
+}

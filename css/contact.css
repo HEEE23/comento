@@ -1,0 +1,72 @@
+* {
+    font-family: "Pretendard Variable", sans-serif;
+}
+
+body {
+    background-color: #efd39f;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 화면 전체 높이를 차지 */
+}
+
+/* 리스트 컨테이너 (스크롤 섹션) */
+.list {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 200px;
+}
+
+/* 프로필 이미지 스타일 */
+.contact_img {
+    width: 80%; /* 이미지의 크기를 화면에 맞게 조정 */
+    max-width: 400px; /* 최대 너비 제한 */
+    height: auto; /* 비율에 맞게 높이 조정 */
+    border-radius: 15px; /* 둥근 모서리 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+    margin-top: -180px;
+    margin-bottom: 20px; /* 이미지와 텍스트 간 여백 조정 */
+}
+
+/* Gmail 및 Github 링크 스타일 */
+.ct {
+    margin-top: 10px; /* 이미지와 링크 간의 여백 */
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    padding: 10px 30px;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 170px; /* 링크 버튼 너비 설정 (너무 길어지지 않도록) */
+    margin-top: 50px;
+    margin-left: 40px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.four{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+}
+/* Hover 효과 */
+.ct:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* hover 시 배경 색상 변경 */
+}
+
+.fas fa-envelope{
+    margin-right: 30px;
+
+}

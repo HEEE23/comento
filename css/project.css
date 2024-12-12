@@ -1,0 +1,56 @@
+* {
+    font-family: "Pretendard Variable", sans-serif;
+}
+
+body {
+    background-color: #bbafcf;
+}
+
+.list {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 100px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.lists_textt {
+    text-align: center; /* 가로 가운데 */
+    display: flex; /* Flexbox 사용 */
+    flex-direction: column; /* 세로 방향 정렬 */
+    align-items: center; /* 가로 방향 가운데 정렬 */
+    justify-content: center; /* 세로 방향 가운데 정렬 */
+    height: 80%; /* 부모 요소의 전체 높이 사용 */
+}
+
+.lists{
+    text-align: center;
+    display: block;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 1.8;
+    font-style: italic;
+}
+
+.list_text li {
+    margin: 0; /* 기본 마진 제거 */
+    padding: 0; /* 기본 패딩 제거 */
+}
+
+
+.list_img {
+    width: 300px;
+    height: 400px;
+    display: block;
+    margin: -15vh 8vh;
+    margin-top: -35px;
+    margin-bottom: 16px;
+}
+
+.project {
+    display:inline-flex;
+    margin-top: 60px;
+}
