@@ -2,7 +2,7 @@
     font-family: "Pretendard Variable", sans-serif;
 }
 
-h3 {
+h1 {
     color: #ffffff;
     text-align: center;
     font-style: italic;
@@ -97,7 +97,7 @@ h3 {
 
 /* 3 */
 
-h1 {
+h2 {
     text-align: center;
 }
 
@@ -117,13 +117,24 @@ h1 {
     font-size: 23px;
     line-height: 1.8;
     font-style: italic;
+    margin : 0;
+    padding : 0;
 }
 
-.list_text li {
+.list_text{
+
     margin: 0; /* 기본 마진 제거 */
     padding: 0; /* 기본 패딩 제거 */
+    
 }
 
+.list_text ul{
+    margin:0;
+}
+
+.lt{
+    text-align:left;
+}
 
 .list_img {
     width: 300px;
