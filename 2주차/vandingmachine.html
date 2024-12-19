@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../1주차/imgs/icons8-star-16.ico">
+    <title>자판기</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../2주차/css/machine.css">
+</head>
+
+<body>
+    <div class = "top">
+        <table>
+            <!-- <caption><h1>자판기</h1></caption> -->
+                <tr>
+                    <td class = 'drink'><img class="drink" src="../2주차/imgs/coke.jpg"><br>
+                        <input type="button" value="1300원"></td>
+                    <td class = 'drink'><img class="drink" src="../2주차/imgs/coke.jpg"><br>
+                        <input type="button"" value="1300원"></td>
+                    <td class = 'drink'><img class="drink" src="../2주차/imgs/pepsi.jpg"><br>
+                        <input type="button"" value="1300원"></td>
+                    <td class = 'drink'><img class="drink" src="../2주차/imgs/cider.jpg"><br>
+                        <input type="button"; inputImg('사이다.jpg')" value="1200원"></td>
+                    <td class = 'drink'><img class="drink" src="../2주차/imgs/fanta.webp"><br>
+                        <input type="button" value="1300원"></td>
+                    <td class = 'drink'><img class="drink" src="../2주차/imgs/fanta_grape.webp"><br>
+                        <input type="button" value="1300원"></td>
+
+                    <td class="change"><input type="button" value="1000원" >
+                        <br>
+                        <input type="button" value="500원">
+                        <br>
+                        <input type="button" value="100원">
+                        <br>
+                        <input type="text" id="result" style="width:50px"></td>
+                </tr>
+                
+                <tr>
+                    <td class = 'drink'><img src="../2주차/imgs/bongbong.jpg"><br><input type="button" value="1000원"></td>
+                    <td class = 'drink'><img src="../2주차/imgs/sikhye.avif"><br><input type="button" value="800원"></td>
+                    <td class = 'drink'><img src="../2주차/imgs/pear.webp"><br><input type="button"  value="500원"></td>
+                    <td class = 'drink'><img src="../2주차/imgs/milkis.jpg"><br><input type="button" value="1500원"></td>
+                    <td class = 'drink'><img src="../2주차/imgs/pine.webp"><br><input type="button"  value="1000원"></td>
+                    <td class = 'drink'><img src="../2주차/imgs/tejava.jpg"><br><input type="button"  value="1000원"></td>
+
+                    <td class="change"><input type="button" value="잔돈반환" style="width: 100px; height:40px; font-size : 17px;"></td>
+                </tr>
+
+                <tr>
+                    <td class = 'drink'><img src="../2주차/imgs/letsbe.avif"><br><input type="button"  value="500원"></td>
+                    <td class = 'drink'><img src="../2주차/imgs/letsbe.avif"><br><input type="button" value="500원"></td>
+                    <td class = 'drink'><img src="../2주차/imgs/georgia.jpg"><br><input type="button" value="500원"></td>
+                    <td class = 'drink'><img src="../2주차/imgs/georgia.jpg"><br><input type="button" value="500원"></td>
+                    <td class = 'drink'><img src="../2주차/imgs/water.jpg"><br><input type="button" value="1000원"></td>
+                    <td class = 'drink'><img src="../2주차/imgs/corn.jpg"><br><input type="button" value="1200원"></td>
+                </tr>
+            <tr>
+                <td rowspan="4" colspan="6" width="20px" height="400px" class = "space">
+                    <img src="../2주차/imgs/cocacola.jpeg" class = 'coca-image'>
+                </td>
+                <td rowspan="2" class="change">
+                    <p style="font-size: 17px;"><br>1000원<input type="text" id="changeThousand" style="width:30px; height:14px; margin-left:8px">개
+                    <br>500원<input type="text" id="changeFive" style="width:30px; height:14px; margin-left:13px">개
+                    <br>100원<input type="text" id="changeOne" style="width:30px; height:14px; margin-left:13px">개
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
