@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+    <link rel="shortcut icon" href="/1주차/imgs/icons8-star-16.ico">
+    <title>계산기</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="display">
+                <div class="history"></div> <!-- 계산 기록 표시 -->
+                <div class="result">0</div> <!-- 계산 결과 표시 -->
+            </div>
+            <div class="controller">
+                <div class="buttons">
+                    <button class="yellow" onclick="clearDisplay()">AC</button>
+                    <button class="yellow" onclick="clearLast()">C</button>
+                    <button class="orange" onclick="addToDisplay('(')">(</button>
+                    <button class="orange" onclick="addToDisplay(')')">)</button>
+                </div>
+                <div class="buttons">
+                    <button class="gray" onclick="addToDisplay('7')">7</button>
+                    <button class="gray" onclick="addToDisplay('8')">8</button>
+                    <button class="gray" onclick="addToDisplay('9')">9</button>
+                    <button class="orange" onclick="addToDisplay('+')">+</button>
+                </div>
+                <div class="buttons">
+                    <button class="gray" onclick="addToDisplay('4')">4</button>
+                    <button class="gray" onclick="addToDisplay('5')">5</button>
+                    <button class="gray" onclick="addToDisplay('6')">6</button>
+                    <button class="orange" onclick="addToDisplay('-')">-</button>
+                </div>
+                <div class="buttons">
+                    <button class="gray" onclick="addToDisplay('1')">1</button>
+                    <button class="gray" onclick="addToDisplay('2')">2</button>
+                    <button class="gray" onclick="addToDisplay('3')">3</button>
+                    <button class="orange" onclick="addToDisplay('*')">*</button>
+                </div>
+                <div class="buttons">
+                    <button class="gray" onclick="addToDisplay('0')">0</button>
+                    <button class="gray" onclick="addToDisplay('.')">.</button>
+                    <button class="yellow" onclick="calculate()">=</button>
+                    <button class="orange" onclick="addToDisplay('/')">/</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let numberClicked = false;  // 숫자가 클릭되었는지 여부
+        let history = "";  // 연산 기록을 저장할 변수
+
+        function addToDisplay(char) {
+            const result = document.querySelector('.result');
+        
+            // 화면에 0이 표시되고, 클릭한 값이 숫자라면 그 값으로 바꾼다.
+            if (result.innerText == "0" && !isNaN(char)) {
+                result.innerText = char;
+            }
+            // 화면에 0이 표시되고, 클릭한 값이 괄호일 때, 0이 아닌 괄호를 추가
+            else if (result.innerText == "0" && (char === '(' || char === ')')) {
+                result.innerText = char;
+            }
+            else {
+                // 연산자가 연속해서 입력되지 않도록 처리, 괄호는 예외로 처리
+                if (isNaN(char) && char !== '(' && char !== ')') {  // 연산자일 경우 (괄호 제외)
+                    if (!numberClicked) {
+                        return; // 이전에 연산자가 눌린 상태에서 연산자를 눌렀다면 아무것도 하지 않음
+                    }
+                }
+                // 괄호 뒤에 연산자가 올 수 있도록 처리
+                if (char === '(' || char === ')') {
+                    result.innerText += char;
+                } else {
+                    result.innerText += char;  // 숫자 또는 연산자, 괄호를 화면에 추가
+                }
+            }
+        
+            // 입력 후, 숫자 클릭 여부를 설정
+            if (isNaN(char)) {  // 연산자일 경우
+                if (char == '(' || char == ')') {
+                    numberClicked = true;  // 괄호가 입력되면 숫자가 눌린 상태로 처리
+                } else {
+                    numberClicked = false; // 연산자는 숫자 상태를 해제
+                }
+        
+            } else {
+                numberClicked = true;  // 숫자가 눌린 경우
+            }
+        }
+
+        function calculate() {
+            const result = document.querySelector('.result');
+            const expression = result.innerText;
+            try {
+                const calcResult = eval(expression);
+                result.innerText = calcResult;
+                // 연산 기록을 추가
+                history = expression + " = " + calcResult;
+                updateHistory();
+            } catch (e) {
+                result.innerText = "Error";  // 계산 오류 처리
+            }
+        }
+
+        function updateHistory() {
+            const historyDisplay = document.querySelector('.history');
+            historyDisplay.innerText = history;  // 계산 기록을 화면에 표시
+        }
+
+        function clearDisplay() {
+            document.querySelector('.result').innerText = "0"; // 화면 초기화
+            document.querySelector('.history').innerText = ""; // 연산 기록 초기화
+        }
+
+        function clearLast() {
+            const result = document.querySelector('.result');
+            result.innerText = result.innerText.slice(0, -1) || "0"; // 마지막 문자 제거
+        }
+    </script>
+</body>
+</html>

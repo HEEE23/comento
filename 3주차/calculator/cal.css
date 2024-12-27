@@ -1,0 +1,117 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 1. 배경 */
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 2. 계산기 틀 */
+.calculator {
+    display: flex;
+    border: 2px solid #918a8e;
+    background-color: #fffec5;
+    box-shadow: 2px 2px 10px #918a8e;
+    width: 350px;
+    height: 500px;
+    flex-direction: column;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+/* 3. 계산기 입력 화면 */
+.display {
+    display: flex;
+    border: 2px solid #918a8e;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 5px #918a8e inset;
+    flex: 10%;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-bottom: 20px;
+    padding: 3%;
+    border-radius: 10px;
+    font-size: 32px;
+    color: #000000;
+    flex-direction: column;
+}
+
+.history {
+    font-size: 18px; /* 결과값보다 작은 글씨 크기 */
+    color: #888; /* 연산 기록 색상 */
+    margin-bottom: 5px; /* 결과값과의 간격 */
+}
+
+.result {
+    font-size: 32px; /* 결과값 크기 */
+    font-weight: bold;
+}
+
+/* 4. 컨트롤러 틀 */
+.controller {
+    display: flex;
+    flex: 70%;
+    border: 2px solid #918a8e;
+    background-color: white;
+    flex-direction: column;
+    padding: 3%;
+    border-radius: 10px;
+}
+/* 5. 버튼 전체 틀 */
+.buttons {
+    display: flex;
+    flex: auto;
+    justify-content: space-evenly;
+}
+
+button {
+    border: 2px solid #262426;
+    width: 52px;
+    height: 52px;
+    margin: 2%;
+    border-radius: 50px;
+    box-shadow: 0px 2px 2px #262426;
+    font-size: 1.5rem;
+    color: #000000;
+}
+
+/* 7. 버튼 색상 */
+.gray {
+    background-color: #D6D6D8;
+}
+
+.yellow {
+    background-color: #F5D473;
+}
+
+.orange {
+    background-color: #f4be7b;
+}
+
+
+/* 8. 버튼 눌리는 효과 */
+.gray:active {
+    box-shadow: 0 0 #465767;
+    background-color: #6B6B6C;
+    color: white;
+}
+
+.yellow:active {
+    box-shadow: 0 0 #465767;
+    background-color: #7B6A3A;
+    color: white;
+}
+
+.orange:active {
+    box-shadow: 0 0 #465767;
+    background-color: #6D4A20;
+    color: white;
+}
