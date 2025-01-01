@@ -1,0 +1,128 @@
+/* 1. 기본 설정 */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    vertical-align: middle;
+    line-height: 1.4;
+    font-family: "Pretendard Variable", sans-serif;
+}
+/* 2. 제목 */
+h1 {
+    color: #2BA8D9;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* 3. 전체 레이아웃 설정 */
+.container {
+    width: 100%;
+    max-width: 520px;
+    border: 1px solid #edf4ff;
+    margin: 80px auto;
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 10px 15px rgba(8, 34, 83, 0.1);
+    border-radius: 14px;
+}
+
+/* 4. 입력 영역 및 버튼 배치*/
+.container .input-container { 
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.container .input-box {
+    width: calc(100% - 55px); /* 버튼 공간을 제외한 나머지 너비 */
+}
+.container .input-container .add-btn {
+    width: 45px;
+    height: 45px;
+    background-color: #2BA8D9;
+    color: #fff;
+    font-size: 24px;
+    border: 0;
+    border-radius: 15px;
+}
+
+/* 버튼 눌리는 효과 */
+.container .input-container .add-btn:active {
+    box-shadow: 0 0 #465767;
+    background-color: #18485b;
+    color: white;
+}
+
+/* 5. 입력 필드 스타일 */
+input[type=text] {
+    border: 1px solid #2BA8D9;
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 18px;
+    height: 45px;
+    border-radius: 50px;
+}
+
+/* 6. 투두리스트 항목 스타일 */
+li {
+    list-style: none; 
+}
+
+.task-list {
+    margin-top: 35px;
+    max-height: 400px;
+    overflow: auto; /* 목록이 많을 경우 스크롤 가능하게 */
+}
+
+/* 스크롤바 */
+.task-list::-webkit-scrollbar { width: 6px; height: 10px; }
+.task-list::-webkit-scrollbar-thumb { background: #2BA8D9; border-radius: 10px; }
+.task-list::-webkit-scrollbar-track { background: #f4f4f4; border-radius: 10px; }
+.task-list .task {
+    border-top: 1px dashed #2BA8D9
+    ;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;
+}
+.task-list .task:last-child {
+    border-bottom: 1px dashed #2BA8D9;
+}
+/* 체크 박스 */
+.task-list .check-item {
+    width: calc(100% - 50px);
+}
+.task-list .check-item input[type=checkbox] {
+    display: none;
+}
+.task-list .check-item label {
+    background: url(./imgs/check_before.png) no-repeat left center / 24px;
+    vertical-align: middle;
+    padding-left: 40px;
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+}
+.task-list .check-item input[type=checkbox]:checked + label {
+    background-image: url(./imgs/check_after.png);
+    color: #6c8186;
+    text-decoration: line-through;
+}
+
+/*삭제 버튼 */
+deletebtn {
+    border: 0;
+    cursor: pointer;
+}
+
+.task-list .delete-btn {
+    width: 25px;
+    height: 25px;
+    background: url('./imgs/delete.png') no-repeat center center / 25px; 
+}
+
+.task-list .delete-btn:active {
+    transform: scale(0.95); /* 클릭했을 때 약간 작아지는 효과 */
+    background-color: rgba(214, 71, 83, 0.2); /* 클릭할 때 배경을 더 어두워지게 */
+}
